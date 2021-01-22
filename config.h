@@ -5,9 +5,9 @@ static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "JetBrainsMono-Regular:size=10" };
+static const char *fonts[]          = { "JetBrainsMono-Regular:size=14" };
 
-static const char dmenufont[]       = "JetBrainsMono-Regular:size=10";
+static const char dmenufont[]       = "JetBrainsMono-Regular:size=14";
 static char normbgcolor[]           = "#222222";
 static char normbordercolor[]       = "#444444";
 static char normfgcolor[]           = "#bbbbbb";
@@ -66,7 +66,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = browsercmd } },
-	{ MODKEY,                       XK_n,      spawn,          SHCMD("changewall")},
+	{ MODKEY,                       XK_n,      spawn,          SHCMD("wallpaper_x.sh /home/udit/Lacia")},
 	{ MODKEY,                       XK_w,      spawn,          SHCMD("st")},
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
