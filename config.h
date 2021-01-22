@@ -61,8 +61,15 @@ static const char *dmenucmd[] = { "rofi", "-show", "run"};
 static const char *termcmd[]  = { "kitty", NULL };
 static const char *browsercmd[] = {"chromium"};
 
+
+#include <X11/XF86keysym.h>
 static Key keys[] = {
 	/* modifier                     key        function        argument */
+  { 0, XF86XK_AudioMute,    spawn,    SHCMD("pamixer --toggle-mute") },
+  { 0, XF86XK_AudioRaiseVolume, spawn,    SHCMD("pamixer --allow-boost -i 5") },
+  { 0, XF86XK_AudioLowerVolume, spawn,    SHCMD("pamixer --allow-boost -d 5") },
+  { 0, XF86XK_MonBrightnessUp,  spawn,    SHCMD("light -A 2") },
+  { 0, XF86XK_MonBrightnessDown,  spawn,    SHCMD("light -U 2") },
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = browsercmd } },
@@ -99,7 +106,6 @@ static Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
-//	{ MODKEY,             XK_q,      quit,           {0} },
 };
 
 /* button definitions */
