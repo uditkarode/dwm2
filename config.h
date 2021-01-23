@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 1;        /* border pixel of windows */
+static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const Gap default_gap        = {.isgap = 1, .realgap = 10, .gappx = 10};
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
@@ -36,7 +36,7 @@ static const Rule rules[] = {
 /* layout(s) */
 static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
-static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
+static const int resizehints = 0;    /* 1 means respect size hints in tiled resizals */
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
@@ -58,7 +58,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "rofi", "-show", "run"};
+static const char *dmenucmd[] = { "rofi", "-dpi", "90", "-theme", "slate", "-lines", "12","-padding", "18", "-width", "60", "-location", "0", "-show", "run"};
 static const char *termcmd[]  = { "kitty", NULL };
 static const char *browsercmd[] = {"chromium"};
 
@@ -69,6 +69,7 @@ static Key keys[] = {
   { 0, XF86XK_AudioMute,    spawn,    SHCMD("pamixer --toggle-mute") },
   { 0, XF86XK_AudioRaiseVolume, spawn,    SHCMD("pamixer --allow-boost -i 5") },
   { 0, XF86XK_AudioLowerVolume, spawn,    SHCMD("pamixer --allow-boost -d 5") },
+  { MODKEY,			XK_F5,		xrdb,		{.v = NULL } },
   { 0, XF86XK_MonBrightnessUp,  spawn,    SHCMD("light -A 2") },
   { 0, XF86XK_MonBrightnessDown,  spawn,    SHCMD("light -U 2") },
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
@@ -83,7 +84,10 @@ static Key keys[] = {
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
-	{ MODKEY,             XK_q,      killclient,     {0} },
+	{ MODKEY,                       XK_q,      killclient,     {0} },
+	{ MODKEY,                       XK_s,      spawn,          SHCMD("flameshot full --path /home/udit/SS") },
+	{ MODKEY|ShiftMask,                       XK_s,      spawn,          SHCMD("flameshot gui") },
+	{ MODKEY,                       XK_p,      spawn,          SHCMD("pavucontrol") },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
