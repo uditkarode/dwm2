@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/dash
 
 while true; do
 
@@ -49,8 +49,7 @@ DIFF="$(( $FETCH_END - $FETCH_START ))"
 
 if [ "$DIFF" -lt "1000" ] && [ "$DIFF" -gt "0" ]; then
 	SLEEP_TIME="$(( 1000 - $DIFF ))"
-	SLEEP_TIME="$(( $SLEEP_TIME.0 / 1000 ))"
-	sleep "$SLEEP_TIME"
+	sleep "${SLEEP_TIME}e-3"
 fi
 
 xsetroot -name "^c#7cafc2^ ^c#a9a9a9^VOL ^c#ffffff^$VOLUME $AUDIO_DEVICE ^c$COLOR^[] ^c#a9a9a9^BAT ^c#ffffff^$BATTERY ^c$COLOR^[] ^c#a9a9a9^PWR ^c#ffffff^$POWER^c$COLOR^[] ^c#a9a9a9^MEM ^c#ffffff^$MEM% ^c$COLOR^[] ^c#a9a9a9^WLAN ^c#ffffff^$WLAN^c#7cafc2^^b$COLOR^^c#ffffff^ > $DATE < "
