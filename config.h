@@ -94,6 +94,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY|ShiftMask,                       XK_t,      spawn,      SHCMD("telegram-desktop") },
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
+	{ MODKEY|ShiftMask,             XK_f,      togglefullscr,  {0} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
 	{ MODKEY|ShiftMask,             XK_m,      spawn,          SHCMD("prime-run java -jar /home/udit/Minecraft/TLauncher-2.72.jar") },
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
