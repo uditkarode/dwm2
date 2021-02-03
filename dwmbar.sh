@@ -10,7 +10,7 @@ fi
 
 VOLUME="$(pamixer --get-volume)%"
 BATTERY="$(acpi | sed "s/,//g" | awk '{if ($3 == "Discharging"){print $4; exit} else {print $4"+"}}' | tr -d "\n")"
-MEM="$(free | awk 'FNR == 2 {print $3/($3+$4)*100}')"
+MEM="$(free | grep Mem | awk '{printf "%d", $3/$2 * 100}')"
 WLAN="$(nmcli dev status | grep 'wlp59s0' | grep -v 'p2p-dev' | awk '{ print $3 }')"
 DATE="$(date '+%a, %I:%M:%S %p')"
 POWER="$(powercheck)"
