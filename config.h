@@ -5,7 +5,7 @@ static const unsigned int borderpx  = 0;        /* border pixel of windows */
 static const Gap default_gap        = {.isgap = 1, .realgap = 10, .gappx = 10};
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "JetBrainsMono-Regular:size=14" };
+static const char *fonts[]          = { "Cascadia Mono:size=14" };
 
 static const char dmenufont[]       = "JetBrainsMono-Regular:size=14";
 static char normbgcolor[]           = "#222222";
