@@ -4,11 +4,11 @@
 static const unsigned int borderpx  = 0;        /* border pixel of windows */
 static const Gap default_gap        = {.isgap = 1, .realgap = 10, .gappx = 10};
 static const int showbar            = 1;        /* 0 means no bar */
-static const int topbar             = 1;        /* 0 means bottom bar */
+static const int topbar             = 0;        /* 0 means bottom bar */
 static const int usealtbar          = 1;        /* 1 means use non-dwm status bar */
 static const char *altbarclass = "Polybar";     /* Alternate bar class name */
 static const char *alttrayname = "Polybar";     /* Alternate bar class name */
-static const char *altbarcmd  = "/usr/local/bin/bar.sh"; /* Alternate bar launch command */
+static const char *altbarcmd  = "/home/udit/.config/polybar/launch.sh"; /* Alternate bar launch command */
 static const char *fonts[]          = { "Cascadia Mono:size=14" };
 
 static const char dmenufont[]       = "JetBrainsMono-Regular:size=14";
