@@ -12,4 +12,8 @@ if [ -d "$1" ]; then
 	xdotool key "Super+F5"
 	COLOR="$(xrdb -query | grep -i '*color10' | head -n 1 | sed 's/.*://' | sed 's/^\s//')"
 	echo "$COLOR" > ~/.dwm_status_color
+elif [ -f "$1" ]; then
+	wal -i "$1"
+	xdotool key "Super+F5"
+	COLOR="$(xrdb -query | grep -i '*color10' | head -n 1 | sed 's/.*://' | sed 's/^\s//')"
 fi
