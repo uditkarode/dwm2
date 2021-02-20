@@ -18,9 +18,6 @@ static char normfgcolor[]           = "#bbbbbb";
 static char selfgcolor[]            = "#eeeeee";
 static char selbordercolor[]        = "#1089ff";
 static char selbgcolor[]            = "#1089ff";
-
-static const int CORNER_RADIUS = 16;
-
 static const char *colors[][3] = {
        /*               fg           bg           border   */
        [SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor },
