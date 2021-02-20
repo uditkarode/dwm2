@@ -1278,10 +1278,10 @@ void drawroundedcorners(Client *c) {
         XSetForeground(dpy, shape_gc, 0);
         XFillRectangle(dpy, mask, shape_gc, 0, 0, w, h);
         XSetForeground(dpy, shape_gc, 1);
-        XFillArc(dpy, mask, shape_gc, 0, 0, dia, dia, 0, 23040);
-        XFillArc(dpy, mask, shape_gc, w-dia-1, 0, dia, dia, 0, 23040);
-        XFillArc(dpy, mask, shape_gc, 0, h-dia-1, dia, dia, 0, 23040);
-        XFillArc(dpy, mask, shape_gc, w-dia-1, h-dia-1, dia, dia, 0, 23040);
+        XFillArc(dpy, mask, shape_gc, 0, 0, dia, dia, 0, 43040);
+        XFillArc(dpy, mask, shape_gc, w-dia-1, 0, dia, dia, 0, 43040);
+        XFillArc(dpy, mask, shape_gc, 0, h-dia-1, dia, dia, 0, 43040);
+        XFillArc(dpy, mask, shape_gc, w-dia-1, h-dia-1, dia, dia, 0, 43040);
         XFillRectangle(dpy, mask, shape_gc, CORNER_RADIUS, 0, w-dia, h);
         XFillRectangle(dpy, mask, shape_gc, 0, CORNER_RADIUS, w, h-dia);
         XShapeCombineMask(dpy, win, ShapeBounding, 0, 0, mask, ShapeSet);
